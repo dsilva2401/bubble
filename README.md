@@ -16,10 +16,10 @@ An express framework wrapper
 
 #### Config parameter attributes
 
-Config attribute | Type | Description
--- | -- |--
-`config.domain` | `String` | Sets app domain
-`config.port`| `Number` | Sets app port
+| Config attribute | Type | Description |
+| --- | --- | --- |
+| `config.domain` | `String` | Sets app domain |
+| `config.port`| `Number` | Sets app port |
 
 ### Methods 
 - **enableLogging**( ***logger*** (*optional*): `Function` ) - Enable logging using `logger` if passed.
