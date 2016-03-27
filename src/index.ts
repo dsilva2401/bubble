@@ -15,6 +15,7 @@ class Bubble {
 	public config: Object;
 	public app: any;
 	public databases: Object;
+	public agents: Object;
 	public childs: Object;
 	public interfaces: Object;
 
@@ -46,6 +47,7 @@ class Bubble {
 			'$databases': this.databases,
 			'$libs': this.libs,
 			'$logger': this.logger,
+			'$agents': this.agents,
 			'$express': express,
 			'$interfaces': this.interfaces,
 			'$q': Q

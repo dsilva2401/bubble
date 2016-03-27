@@ -10,6 +10,7 @@ An express framework wrapper
 - **databases**: `Object` - App databases.
 - **childs**: `Object` - App `Bubble` childs.
 - **interfaces**: `Object` - App interfaces.
+- **agents**: `Object` - App agents.
 
 ### Constructor
 - *new* `Bubble`(***config***: `Object`, ***isRoot*** (*optional*): `Boolean` ) - Creates a new instance of `Bubble` getting ***config*** with app configuration and an optional parameter caller ***isRoot*** set to `true` if instance is *root* app.
@@ -35,6 +36,7 @@ An express framework wrapper
 - `$logger` - Logger function.
 - `$express` - `express` framework.
 - `$interfaces` - App interfaces.
+- `$agents` - App agents.
 - `$q` - `Q` promises librarie.
 
 ### Example usage

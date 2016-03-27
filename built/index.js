@@ -34,6 +34,7 @@ var Bubble = (function () {
             '$databases': this.databases,
             '$libs': this.libs,
             '$logger': this.logger,
+            '$agents': this.agents,
             '$express': express,
             '$interfaces': this.interfaces,
             '$q': Q
