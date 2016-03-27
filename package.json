@@ -1,5 +1,5 @@
 {
-  "name": "bubble",
+  "name": "express-bubble",
   "version": "0.0.0",
   "description": "An express framework wrapper",
   "main": "built/index.js",
