@@ -1,0 +1,29 @@
+{
+  "name": "bubble",
+  "version": "0.0.0",
+  "description": "An express framework wrapper",
+  "main": "built/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dsilva2401/bubble.git"
+  },
+  "author": "Diego Silva <dsilva2401@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsilva2401/bubble/issues"
+  },
+  "homepage": "https://github.com/dsilva2401/bubble#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.7.8"
+  },
+  "dependencies": {
+    "express": "^4.13.1",
+    "pem": "^1.8.1",
+    "q": "^1.4.1",
+    "subdomain": "^1.2.0"
+  }
+}
