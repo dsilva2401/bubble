@@ -13,6 +13,7 @@ var Bubble = (function () {
         this.interfaces = {};
         this.agents = {};
         this.databases = {};
+        this.transporters = {};
         // Set config
         this.config = config;
         // Verify constructor parameters
@@ -40,7 +41,8 @@ var Bubble = (function () {
             '$agents': this.agents,
             '$express': express,
             '$interfaces': this.interfaces,
-            '$q': Q
+            '$q': Q,
+            '$transporters': this.transporters
         };
     };
     Bubble.prototype._resolveDependencies = function (fn) {
