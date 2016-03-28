@@ -37,11 +37,11 @@ An express framework wrapper
 - `$express` - `express` framework.
 - `$interfaces` - App interfaces.
 - `$agents` - App agents.
-- `$q` - `Q` promises librarie.
+- `$q` - `Q` promises library.
 
 ### Example usage
 ```javascript
-var Bubble = require('bubble');
+var Bubble = require('express-bubble');
 
 var bubble = new Bubble({
 	domain: 'localhost',
