@@ -26,6 +26,9 @@ class Bubble {
 			this.app = express();
 			this.childs = {};
 			this.libs = {};
+			this.interfaces = {};
+			this.agents = {};
+			this.databases = {};
 
 		// Set config
 			this.config = config;

@@ -10,6 +10,9 @@ var Bubble = (function () {
         this.app = express();
         this.childs = {};
         this.libs = {};
+        this.interfaces = {};
+        this.agents = {};
+        this.databases = {};
         // Set config
         this.config = config;
         // Verify constructor parameters
