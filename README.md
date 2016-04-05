@@ -14,7 +14,7 @@ An express framework wrapper
 - **transporters**: `Object` - App transporters.
 
 ### Constructor
-- *new* `Bubble`(***config***: `Object`, ***isRoot*** (*optional*): `Boolean` ) - Creates a new instance of `Bubble` getting ***config*** with app configuration and an optional parameter caller ***isRoot*** set to `true` if instance is *root* app.
+- *new* `Bubble`(***config***: `Object`, ***parentBubble*** (*optional*): `Bubble` ) - Creates a new instance of `Bubble` getting ***config*** with app configuration and an optional parameter ***parentBubble*** with an instance of the parent bubble if is the child bubble.
 
 #### Config parameter attributes
 
@@ -40,6 +40,7 @@ An express framework wrapper
 - `$agents` - App agents.
 - `$transporters` - App transporters.
 - `$q` - `Q` promises library.
+- `$parent` - parent `Bubble` instance.
 
 ### Example usage
 ```javascript

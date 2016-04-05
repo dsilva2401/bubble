@@ -4,16 +4,18 @@ var Q = require('q');
 var subdomain = require('subdomain');
 var Bubble = (function () {
     // Constructor
-    function Bubble(config, isRoot) {
+    function Bubble(config, parentBubble) {
         // Initializing attributes
+        var isRoot = !!!parentBubble;
         var self = this;
         this.app = express();
         this.childs = {};
-        this.libs = {};
+        this.libs = (parentBubble || {}).libs || {};
         this.interfaces = {};
         this.agents = {};
         this.databases = {};
         this.transporters = {};
+        this.parentBubble = parentBubble;
         // Set config
         this.config = config;
         // Verify constructor parameters
@@ -42,7 +44,8 @@ var Bubble = (function () {
             '$express': express,
             '$interfaces': this.interfaces,
             '$q': Q,
-            '$transporters': this.transporters
+            '$transporters': this.transporters,
+            '$parent': this.parentBubble
         };
     };
     Bubble.prototype._resolveDependencies = function (fn) {

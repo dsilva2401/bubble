@@ -10,7 +10,8 @@ class Bubble {
 
 	// Attributes
 	private isRoot: Boolean;
-	private libs: Object;
+	private parentBubble: Bubble;
+	public libs: Object;
 	public logger: Function;
 	public config: Object;
 	public app: any;
@@ -21,16 +22,18 @@ class Bubble {
 	public transporters: Object;
 
 	// Constructor
-	public constructor (config: Object, isRoot: Boolean) {
+	public constructor (config: Object, parentBubble: any) {
 		// Initializing attributes
+			var isRoot = !!!parentBubble;	
 			var self:any = this;
 			this.app = express();
 			this.childs = {};
-			this.libs = {};
+			this.libs = (parentBubble || {}).libs || {};
 			this.interfaces = {};
 			this.agents = {};
 			this.databases = {};
 			this.transporters = {};
+			this.parentBubble = parentBubble;
 
 		// Set config
 			this.config = config;
@@ -56,7 +59,8 @@ class Bubble {
 			'$express': express,
 			'$interfaces': this.interfaces,
 			'$q': Q,
-			'$transporters': this.transporters
+			'$transporters': this.transporters,
+			'$parent': this.parentBubble
 		};
 	}
 
