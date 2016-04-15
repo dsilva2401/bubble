@@ -1,5 +1,7 @@
 "use strict";
 var express = require('express');
+var http = require('http');
+var https = require('https');
 var Q = require('q');
 var subdomain = require('subdomain');
 var Bubble = (function () {
@@ -20,14 +22,32 @@ var Bubble = (function () {
         this.config = config;
         // Verify constructor parameters
         this.isRoot = isRoot;
+        // Basics
         if (isRoot && !config.domain) {
             (this.logger || console.log)('Error: config.domain not defined');
             return;
         }
-        if (isRoot && !config.port) {
-            (this.logger || console.log)('Error: config.port not defined');
+        // HTTP
+        if (isRoot && !config.http) {
+            (this.logger || console.log)('Error: config.http not defined');
             return;
         }
+        if (isRoot && !config.http.port) {
+            (this.logger || console.log)('Error: config.http.port not defined');
+            return;
+        }
+        // HTTPS
+        if (isRoot && !config.https) {
+            (this.logger || console.log)('Error: config.https not defined');
+            return;
+        }
+        if (isRoot && !config.https.port) {
+            (this.logger || console.log)('Error: config.https.port not defined');
+            return;
+        }
+        // Initialize HTTP Servers
+        this.httpServer = http.createServer(this.app);
+        this.httpsServer = https.createServer((config.https.options || {}), this.app);
         // Initialize subdomain middleware
         if (isRoot)
             this.app.use(subdomain({ base: this.config.domain, removeWWW: true }));
@@ -87,9 +107,13 @@ var Bubble = (function () {
             (this.logger || console.log)('Error: Can\'t call up method, this bubble is not root');
             return;
         }
-        this.app.listen(this.config.port, function () {
+        this.httpServer.listen(this.config.http.port, function () {
             if (self.logger)
-                self.logger('Bubble up at ' + self.config.domain + ':' + self.config.port);
+                self.logger('HTTP up at ' + self.config.domain + ':' + self.config.http.port);
+        });
+        this.httpsServer.listen(this.config.https.port, function () {
+            if (self.logger)
+                self.logger('HTTPS up at ' + self.config.domain + ':' + self.config.https.port);
         });
     };
     return Bubble;
