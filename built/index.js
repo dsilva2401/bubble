@@ -47,7 +47,7 @@ var Bubble = (function () {
         }
         // Initialize HTTP Servers
         this.httpServer = http.createServer(this.app);
-        this.httpsServer = https.createServer((config.https.options || {}), this.app);
+        this.httpsServer = https.createServer(((config.https || {}).options || {}), this.app);
         // Initialize subdomain middleware
         if (isRoot)
             this.app.use(subdomain({ base: this.config.domain, removeWWW: true }));
