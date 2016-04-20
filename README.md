@@ -3,6 +3,11 @@ Bubble
 
 An express framework wrapper
 
+### Installation
+```bash
+npm install express-bubble --save
+```
+
 ### Attributtes
 - **logger**: `Function` - (*optional*) A function used to log in console.
 - **config**: `Object` - An object with app configuration.
@@ -21,7 +26,8 @@ An express framework wrapper
 | Config attribute | Type | Description |
 | --- | --- | --- |
 | `config.domain` | `String` | Sets app domain |
-| `config.port`| `Number` | Sets app port |
+| `config.http.port`| `Number` | Sets app http port |
+| `config.https.port`| `Number` | Sets app https port |
 
 ### Methods 
 - **enableLogging**( ***logger*** (*optional*): `Function` ) - Enable logging using `logger` if passed.
