@@ -70,3 +70,5 @@ bubble.up();
 
 ### Other examples
 - [https://github.com/dsilva2401/goldfish](https://github.com/dsilva2401/goldfish)
+- [https://github.com/dsilva2401/bubble/tree/master/examples/basic](https://github.com/dsilva2401/bubble/tree/master/examples/basic)
+- [https://github.com/dsilva2401/bubble/tree/master/examples/structured](https://github.com/dsilva2401/bubble/tree/master/examples/structured)
