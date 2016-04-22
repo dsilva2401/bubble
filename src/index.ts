@@ -120,7 +120,7 @@ class Bubble {
 		var self:any = this;
 		if (!self.isRoot) { (this.logger || console.log)('Error: Can\'t call up method, this bubble is not root'); return; }
 		this.httpServer.listen(this.config.http.port, function () {
-			if (self.logger) self.logger('HTTP up at '+self.config.domain+':'+self.config.http.port);
+			if (self.logger) self.logger('HTTP up at '+self.config.domain);
 		});
 		this.httpsServer.listen(this.config.https.port, function () {
 			if (self.logger) self.logger('HTTPS up at '+self.config.domain+':'+self.config.https.port);

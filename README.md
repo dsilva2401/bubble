@@ -48,13 +48,14 @@ npm install express-bubble --save
 - `$q` - `Q` promises library.
 - `$parent` - parent `Bubble` instance.
 
-### Example usage
+### Example
 ```javascript
 var Bubble = require('express-bubble');
 
 var bubble = new Bubble({
-	domain: 'localhost',
-	port: 3000
+	domain: 'localhost:3000',
+	http: { port: 3000 },
+	https: { port: 5000 }
 });
 
 bubble.run(function ($app) {
@@ -66,3 +67,6 @@ bubble.run(function ($app) {
 
 bubble.up();
 ```
+
+### Other examples
+- [https://github.com/dsilva2401/goldfish](https://github.com/dsilva2401/goldfish)
