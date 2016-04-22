@@ -109,7 +109,7 @@ var Bubble = (function () {
         }
         this.httpServer.listen(this.config.http.port, function () {
             if (self.logger)
-                self.logger('HTTP up at ' + self.config.domain + ':' + self.config.http.port);
+                self.logger('HTTP up at ' + self.config.domain);
         });
         this.httpsServer.listen(this.config.https.port, function () {
             if (self.logger)
