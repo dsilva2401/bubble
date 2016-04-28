@@ -17,6 +17,7 @@ npm install express-bubble --save
 - **interfaces**: `Object` - App interfaces.
 - **agents**: `Object` - App agents.
 - **transporters**: `Object` - App transporters.
+- **controllers**: `Object` - App controllers.
 
 ### Constructor
 - *new* `Bubble`(***config***: `Object`, ***parentBubble*** (*optional*): `Bubble` ) - Creates a new instance of `Bubble` getting ***config*** with app configuration and an optional parameter ***parentBubble*** with an instance of the parent bubble if is the child bubble.
@@ -45,6 +46,7 @@ npm install express-bubble --save
 - `$interfaces` - App interfaces.
 - `$agents` - App agents.
 - `$transporters` - App transporters.
+- `$controllers` - App controllers.
 - `$q` - `Q` promises library.
 - `$parent` - parent `Bubble` instance.
 

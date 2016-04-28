@@ -22,6 +22,7 @@ class Bubble {
 	public childs: Object;
 	public interfaces: Object;
 	public transporters: Object;
+	public controllers: Object;
 
 	// Constructor
 	public constructor (config: Object, parentBubble: any) {
@@ -35,6 +36,7 @@ class Bubble {
 			this.agents = {};
 			this.databases = {};
 			this.transporters = {};
+			this.controllers = {};
 			this.parentBubble = parentBubble;
 
 		// Set config
@@ -72,6 +74,7 @@ class Bubble {
 			'$interfaces': this.interfaces,
 			'$q': Q,
 			'$transporters': this.transporters,
+			'$controllers': this.controllers,
 			'$parent': this.parentBubble
 		};
 	}

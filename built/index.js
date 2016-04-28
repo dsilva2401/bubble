@@ -17,6 +17,7 @@ var Bubble = (function () {
         this.agents = {};
         this.databases = {};
         this.transporters = {};
+        this.controllers = {};
         this.parentBubble = parentBubble;
         // Set config
         this.config = config;
@@ -65,6 +66,7 @@ var Bubble = (function () {
             '$interfaces': this.interfaces,
             '$q': Q,
             '$transporters': this.transporters,
+            '$controllers': this.controllers,
             '$parent': this.parentBubble
         };
     };
